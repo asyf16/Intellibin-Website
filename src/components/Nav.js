@@ -2,6 +2,8 @@ import "./Nav.css"
 import '../App.css';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 function Nav() {
   const [click, setClick] = useState(false);
@@ -15,7 +17,7 @@ function Nav() {
         setButton(true)
     }
   }
-
+  const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
     showButton();
@@ -39,21 +41,23 @@ function Nav() {
                 Home
               </Link>
             </li>
-            <li className="nav-item" >
-              <Link className="nav-links" to="/Profile" onClick={closeMenu}>
-                Profile
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/Shop" className="nav-links" onClick={closeMenu}>
-                Shop
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/info" className="nav-links" onClick={closeMenu}>
-                Info
-              </Link>
-            </li>
+            {user ? (
+            <><li className="nav-item" >
+            <Link className="nav-links" to="/Profile" onClick={closeMenu}>
+              Profile
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Shop" className="nav-links" onClick={closeMenu}>
+              Shop
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/info" className="nav-links" onClick={closeMenu}>
+              Info
+            </Link>
+          </li></>
+          ) : <></>}
           </ul>
         </div>
       </nav>
