@@ -22,8 +22,7 @@ function Login() {
     }
     if (user) {
       console.log(auth);
-      navigate("/Profile");
-    }
+     }
   }, [user, loading]);
 
   // function updateBoard(name,score,character){

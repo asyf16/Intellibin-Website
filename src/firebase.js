@@ -55,6 +55,8 @@ const logInWithEmailAndPassword = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log(auth)
+      alert("Login successful");
+      window.location.assign('/')
     } catch (err) {
       console.error(err);
       alert(err.message);
