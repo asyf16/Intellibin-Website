@@ -9,15 +9,22 @@ function Home() {
   return (
     <>
       <div className="homescreen">
+        <h1 className="titleword">IntelliBin</h1>
+        <center>
+        <div className="portion">
+        <h2>Sort Smart, Recycle Right!</h2>
+
+        </div>
+        </center>
           {user ? (
-            <button onClick={logout}>Log out</button>
+            <button className="homebutton" onClick={logout}>Log out</button>
           ) : (
             <>
               <Link to="/login">
-                <button>Login</button>
+                <button className="homebutton">Login</button>
               </Link>
               <Link to="/register">
-                <button>Register</button>
+                <button className="homebutton">Register</button>
               </Link>
             </>
           )}

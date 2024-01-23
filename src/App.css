@@ -24,24 +24,40 @@ h1{
 }
 
 .homescreen{
-  height:95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height:100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('https://cdn.discordapp.com/attachments/955687301822939206/1195940326947434636/IntelliBin_1.png?ex=65b5d139&is=65a35c39&hm=ffc47e4bd1bcc9a008973d5800f8d2c062b24af12b8b50836cd1244d0c133c4d&');
+  background-image: url('https://i.imgur.com/HlTXsts.png');
+  text-align: center;
 }
 
-.homescreen button{
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
- margin-top:  40%;
+.portion{
+  width: 55vw;
+  border-radius: 5rem;
+  background-color: #9fab90;
+  padding:0.8rem;
 }
+
+.homescreen h1{
+  font-size: 180px;
+  color: rgb(91, 72, 58);
+  padding-top: 15rem;
+
+}
+
+.portion h2{
+  font-family: "Nexa heavy";
+  color: #616c54;
+}
+.homebutton{
+  margin-top: 2rem;
+} 
+
 button{
   border: 2px solid #758266;
   padding: .5em 1.5em;
   border-radius: 50px;
+  margin: 0.2rem;
   background-color: #9fab90;
   cursor: pointer;
   font-family: 'Nexa light'; 
@@ -89,4 +105,33 @@ textarea:focus {
 form label {
   color:  #575245;
   font-family: 'Nexa heavy'
+}
+
+@media (max-width: 950px) {
+  
+.homescreen{
+  height:100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://i.imgur.com/B2IQrwb.png');
+  text-align: center;
+}
+
+.portion{
+  width:55vw;
+  border-radius: 5rem;
+  background-color: #9fab90;
+  padding:0.8rem;
+}
+
+.homescreen h1{
+  font-size: 80px;
+  padding-top: 10rem;
+
+}
+
+.portion h2{
+  font-size: 20px;
+}
+
 }
