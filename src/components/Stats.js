@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db, logout } from "../firebase";
+import { auth, db } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+
 import "./Stats.css";
 import Dog from "./Dog";
 import Cat from "./Cat";
@@ -26,12 +27,11 @@ function Stats() {
       const doc = await getDocs(q);
       const data = doc.docs[0].data();
       setName(data.name);
-      setCharacter(data.character)
-      setCoins(data.coins)
-      setToday(data.today)
-      setTotal(data.total)
-      setCapacity(data.capacity)
-
+      setCharacter(data.character);
+      setCoins(data.coins);
+      setToday(data.today);
+      setTotal(data.total);
+      setCapacity(data.capacity);
     } catch (err) {
       console.error(err);
       alert("An error occured while fetching user data");
@@ -41,15 +41,16 @@ function Stats() {
     if (loading) return;
     fetchUserName();
   }, [user, loading]);
+
   return (
     <>
       <section className="stats">
         <div className="stats-wrap">
           <div className="stats-one">
-            {character == "Shiba" ? <Dog /> : null}
-            {character == "Dino" ? <Cat /> : null}
-            {character == "Chicken" ? <Dino /> : null}
-            {character == "Avo" ? <Duck /> : null}
+            {character === "Shiba" ? <Dog /> : null}
+            {character === "Dino" ? <Cat /> : null}
+            {character === "Chicken" ? <Dino /> : null}
+            {character === "Avo" ? <Duck /> : null}
           </div>
           <div className="stats-two">
             <div className="stats-container">

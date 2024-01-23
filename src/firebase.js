@@ -60,6 +60,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     } catch (err) {
       console.error(err);
       alert(err.message);
+      window.location.assign('/login')
     }
   };
 
