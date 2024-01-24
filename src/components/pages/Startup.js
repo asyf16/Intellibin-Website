@@ -19,9 +19,8 @@ function Startup() {
   const register = () => {
     if (!name || !email || !password){alert("Please enter all fields");}
     else{
-      registerWithEmailAndPassword(name, email, password);
-      alert("Registration complete, you are logged in")
-      navigate("/");
+        registerWithEmailAndPassword(name, email, password);
+        navigate('/')
     }
   };
   

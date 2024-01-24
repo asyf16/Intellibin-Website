@@ -79,7 +79,7 @@ function Nav() {
     <>
       <nav className="nav">
         <div className="nav-container">
-          <Link to="/" className="nav-logo" onClick={closeMenu}>
+          <Link to="https://devpost.com/software/intellibin-4qu7co" target="_blank" className="nav-logo" onClick={closeMenu}>
             IntelliBin
           </Link>
           <div className="menu-icon" onClick={handleClick}>

@@ -60,13 +60,14 @@ const logInWithEmailAndPassword = async (email, password) => {
     } catch (err) {
       console.error(err);
       alert(err.message);
-      window.location.assign('/login')
+      window.location.assign('/')
     }
   };
 
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
+      alert("Registration successful, you are now logged in.")
       const user = res.user;
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
