@@ -80,6 +80,7 @@ const logInWithEmailAndPassword = async (email, password) => {
         capacity: '0',
         coins: '0',
         got: [1,0,0,0],
+        date: '0',
 
       });
     } catch (err) {

@@ -12,6 +12,7 @@ import Dino from "./Dino";
 import Duck from "./Duck";
 
 function Stats() {
+
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const [character, setCharacter] = useState("");

@@ -4,14 +4,52 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase";
-import { query, collection, getDocs, where } from "firebase/firestore";
+import { query, collection, getDocs, where,  setDoc,
+  doc} from "firebase/firestore";
 import { Leaderboard } from "./Data";
 
 function Nav() {
+  const [date, setDate] = useState('');
   const [click, setClick] = useState(false);
+
   const handleClick = () => setClick(!click);
   const closeMenu = () => setClick(false);
   const [button, setButton] = useState(true);
+    const dt = null;
+    const [cdate,setTodayDate] = useState(dt); 
+    const handelDate = () =>{
+    let dt = new Date().toLocaleDateString();
+    console.log(dt);
+    if (dt != date){
+      updateDate(dt);
+      updateToday();
+    }
+    if (date == ''){
+      updateDate(dt);
+    }
+    }
+
+  const updateDate = async (array) => {
+    try {
+      const cityRef = doc(db, "users", user?.uid);
+      setDoc(cityRef, { date: array }, { merge: true });
+      console.log("yippee");
+    } catch (err) {
+      console.error(err);
+      alert("Error");
+    }
+  };
+
+  const updateToday = async () => {
+    try {
+      const cityRef = doc(db, "users", user?.uid);
+      setDoc(cityRef, { today: "0" }, { merge: true });
+    } catch (err) {
+      console.error(err);
+      alert("Error");
+    }
+  };
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -30,11 +68,25 @@ function Nav() {
     updateBoard();
   };
 
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setDate(data.date);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
+
   const updateBoard = async () => {
     const q = query(collection(db, "users"));
     const doc = await getDocs(q);
     const long = doc.size;
     let changeprofile = "";
+    fetchUserName();
+    handelDate();
     for (let i = 0; i < long; i++) {
       let exist = false;
       for (let j = 0; j < Leaderboard.length; j++) {
