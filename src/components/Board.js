@@ -5,17 +5,26 @@ import "./Profile.css"
 
 export default function Board() {
     const [period, setPeriod] = useState(0);
+    const [today, setToday] = useState(false);
     const handleClick = (e) => {
     setPeriod(e.target.dataset.id)
   }
+
+    const todaySetter= () => {
+        setToday(true);
+    }
+
+    const allTime= () => {
+        setToday(false);
+    }
 
   return (
     <div className="board">
         <h1 className='leaderboard'>Leaderboard</h1>
 
         <div className="duration">
-            <button onClick={handleClick} data-id='1'>Today</button>
-            <button onClick={handleClick} data-id='0'>All Time</button>
+            <button onClick={todaySetter} data-id='1'>Today</button>
+            <button onClick={allTime} data-id='0'>All Time</button>
         </div>
         <Profiles Leaderboard={between(Leaderboard, period)}></Profiles>
 

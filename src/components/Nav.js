@@ -108,6 +108,11 @@ function Nav() {
                     Info
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to="/QR" className="nav-links" onClick={closeMenu}>
+                    Link Device
+                  </Link>
+                </li>
               </>
             ) : (
               <></>

@@ -9,6 +9,7 @@ import Login from "./components/pages/Login"
 import Startup from "./components/pages/Startup"
 import Info from "./components/pages/Info"
 import Reset from "./components/pages/Reset";
+import QR from "./components/QR";
 
 function App() {
   return(
@@ -17,6 +18,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" exact element={<Home />}></Route>
+        <Route path="/QR" exact element={<QR />}></Route>
         <Route path="/Profile" exact element={<Profile />}></Route>
         <Route path="/Shop" exact element={<Shop />}></Route>
         <Route path="/login" exact element={<Login />}></Route>
