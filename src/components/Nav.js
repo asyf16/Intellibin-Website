@@ -41,6 +41,7 @@ function Nav() {
         if (Leaderboard[j].email == doc.docs[i].data().email) {
           exist = true;
           Leaderboard[j].score = Number(doc.docs[i].data().total);
+          Leaderboard[j].today = Number(doc.docs[i].data().today);
         }
       }
       if (!exist) {
@@ -64,6 +65,7 @@ function Nav() {
           name: doc.docs[i].data().name,
           location: "Canada",
           score: Number(doc.docs[i].data().total),
+          today: Number(doc.docs[i].data().today),
           img: changeprofile,
           dt: "2022-02-10",
           email: doc.docs[i].data().email

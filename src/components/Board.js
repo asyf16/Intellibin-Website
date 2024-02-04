@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Profiles from './Profile';
+import Profilestoday from './Profiletoday';
 import { Leaderboard } from './Data';
 import "./Profile.css"
+
 
 export default function Board() {
     const [period, setPeriod] = useState(0);
@@ -26,32 +28,30 @@ export default function Board() {
             <button onClick={todaySetter} data-id='1'>Today</button>
             <button onClick={allTime} data-id='0'>All Time</button>
         </div>
-        <Profiles Leaderboard={between(Leaderboard, period)}></Profiles>
-
+        {today ? <Profilestoday Leaderboard={between(Leaderboard, today)}></Profilestoday> : <Profiles Leaderboard={between(Leaderboard, today)}></Profiles>
+}
     </div>
   )
 }
 
-
-
-function between(data, between){
-    const today = new Date();
-    const previous = new Date(today);
-    previous.setDate(previous.getDate() - (between + 1));
-
-    let filter = data.filter(val => {
-        let userDate = new Date(val.dt);
-        if (between == 0) return val;
-        return previous <= userDate && today >= userDate;
-    })
-
-    // sort with asending order
-    return filter.sort((a, b) => {
-        if ( a.score === b.score){
-            return b.score - a.score;
-        } else{
-            return b.score - a.score;
-        }
-    })
+function between(data, today){
+    if (today){
+        return data.sort((a, b) => {
+            if ( a.today === b.today){
+                return b.today - a.today;
+            } else{
+                return b.today - a.today;
+            }
+        })
+    }
+    else{
+        return data.sort((a, b) => {
+            if ( a.score === b.score){
+                return b.score - a.score;
+            } else{
+                return b.score - a.score;
+            }
+        })
+    }
 
 }

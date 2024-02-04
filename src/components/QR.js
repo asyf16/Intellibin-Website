@@ -40,7 +40,7 @@ function QR() {
         <br />
         {uid && (
                     <QRCode
-                        title="GeeksForGeeks"
+                        title="User QR"
                         value={uid}
                         bgColor={back}
                         fgColor={fore}
