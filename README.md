@@ -6,8 +6,9 @@ Our new and improved IntelliBin can detect trash placed in front of its camera a
 
 
 # 📷 Video Demo 🎥
-https://www.youtube.com/watch?v=fziGIb2MTAk&t=7s
+[https://www.youtube.com/watch?v=fziGIb2MTAk&t=7s](https://www.youtube.com/watch?v=NknvJ2T73nU&t=1s)
 
+![IMG_8874](https://github.com/asyf16/Intellibin-Website/assets/144833617/d738be6e-d0d0-47a5-b0d6-533457f94b02)
 
 # 🌐 Website Updates 💻
 
@@ -18,24 +19,6 @@ Our IntelliBin website is now hosted at https://Intellibin.tech/! On our website
 Hardware Base: We built a new hardware container that beautifies and containerizes our project. Users can simply place our IntelliBin system on top of existing trashcans to turn any boring trashcan into an exciting recycling robot!
 
 Connected Webcam: Our IntelliBin now works 100% automatically. When an object is placed in front of our integrated webcam, motion-sensing is completed using OpenCV. If motion is detected, the webcam will take a picture of the trash in front of it and identify the object using Google Cloud's Vision API. Depending on the type of object, our robot arm will turn at 180 degrees to sort the trash into one of two trash cans. 
-
-
-# 🌐 Website Features 💻
-![Registration](https://github.com/asyf16/IntelliBin/assets/144833617/1bf42431-06a6-43a4-9668-d115c0ea5636)
-
-User registration with MongoDB
-
-![Login](https://github.com/asyf16/IntelliBin/assets/144833617/532673c8-0506-406e-86aa-1c27ae63c753)
-
-User login with MongoDB
-
-![User](https://github.com/asyf16/IntelliBin/assets/144833617/3aec997f-8f89-40c9-82c6-5d282057315f)
-
-User profile, leaderboard, and avatar shop.
-
-![Information](https://github.com/asyf16/IntelliBin/assets/144833617/afd22bbe-cffe-4412-95e4-19313ce49a97)
-
-Informative section about what items are recyclable. 
 
 # 🚧 Challenges we ran into ⛔
 - Detecting and scanning the QR code using Python
