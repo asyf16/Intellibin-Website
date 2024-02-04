@@ -6,7 +6,7 @@ Our new and improved IntelliBin can detect trash placed in front of its camera a
 
 
 # 📷 Video Demo 🎥
-https://www.youtube.com/watch?v=fziGIb2MTAk&t=7s
+[https://www.youtube.com/watch?v=fziGIb2MTAk&t=7s](https://www.youtube.com/watch?v=NknvJ2T73nU&t=1s)
 
 
 # 🌐 Website Updates 💻
