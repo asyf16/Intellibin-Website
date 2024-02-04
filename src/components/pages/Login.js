@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   auth,
   logInWithEmailAndPassword,
@@ -11,7 +11,6 @@ function Login() {
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
 
-  const navigate = useNavigate();
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -46,7 +45,9 @@ function Login() {
             placeholder="Password"
           />
           <br></br>
-          <Link to="/reset">
+
+        </form>
+        <Link to="/reset">
             {" "}
             <button>Forgot Password</button>
           </Link>
@@ -56,11 +57,9 @@ function Login() {
           >
             Login
           </button>
-          {/* <button className="registerbutton" onClick={signInWithGoogle}>Login with Google</button> */}
           <Link to="/">
             <button>Home</button>
           </Link>
-        </form>
       </center>
     </section>
   );
